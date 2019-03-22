@@ -72,24 +72,21 @@
 
 <h2>Stereo-VI-DSO:双目直接稀疏视觉惯性里程计</h2>
 <p align="justify"><b>Stereo-VI-DSO</b> 是我主导开发的紧耦合视觉-惯性里程计(VIO)，以双目相机和IMU作为定位源，采用联合高斯牛顿优化滑窗内的所有参数
-	包括所有关键帧的位姿、IMU的速度和bias、图像亮度参数以及所选像素的深度值。系统的视觉部分是将单帧静态误差的约束加入到多帧动态多视捆集调整(BA)中，
+	包括所有关键帧的位姿、IMU的速度和bias、图像亮度参数以及所选像素的深度值。系统的视觉部分是将单帧静态误差的约束加入到多帧动态多视光束平差(BA)中，
 	但与基于特征点的系统不同，它直接将光度误差最小化，故称为直接法。双目的固定基线可校正尺度漂移。系统的惯性部分利用预积分法在关键帧之间积累IMU信息，
 	并将其作为关键帧之间的附加约束插入到优化中。此外，我们还介绍了一个基于虚幻引擎4开发的仿真平台，它可以输出大部分用于自动驾驶领域的传感器的原始数据。
-	我们在真实数据和仿真数据的基础上对该方法进行了评价，定性和定量的实验结果表明，该算法在跟踪精度和鲁棒性方面均优于Stereo-DSO。文章可见<a href="#Publications">Publications</a>。
-
-
+	我们在真实数据和仿真数据的基础上对该方法进行了评价，定性和定量的实验结果表明，该算法在跟踪精度和鲁棒性方面均优于Stereo-DSO。
+	文章可见<a href="#Publications">Publications</a>。
+</p>
 
 <h2>基于LSD-SLAM的机器人路径规划和轨迹跟踪系统</h2>
-<p align="justify"><b>LSD-SLAM</b> is a semi-dense, direct SLAM method I developed during my PhD at TUM. It was based on a 
-<a href="https://youtu.be/LZChzEcLNzI"><img border="0" src="images/yt.png" height="13px"/> semi-dense monocular odometry approach</a>, 
-and - together with colleagues and students - we extended it to 
-run <a href="https://youtu.be/X0hx2vxxTMg"><img border="0" src="images/yt.png" height="13px"/> in real-time on a smartphone</a>,
-run <a href="https://youtu.be/oJt3Ln8H03s"><img border="0" src="images/yt.png" height="13px"/> with stereo cameras</a>, 
-run as a <a href="https://youtu.be/XSvFpPYfKWA"><img border="0" src="images/yt.png" height="13px"/> tightly coupled visual-inertial odometry</a>, 
-run <a href="https://youtu.be/v0NqMm7Q6S8"><img border="0" src="images/yt.png" height="13px"/> on omnidirectional cameras</a>, 
-and even to be used for <a href="https://youtu.be/fWBsDwBJD-g"><img border="0" src="images/yt.png" height="13px"/> autonomously navigating a toy quadrocopter</a>.
-For the original monocular version, we published <a href="https://github.com/tum-vision/lsd_slam"><img border="0" src="images/gh.png" height="13px"/> open-source code on GitHub</a>.
-<br /><i>Original Publication (ECCV)</i>: <a href="pdf/engel14eccv.pdf"><img border="0" src="images/pdf.png" height="13px"/> [pdf]</a> (see <a href="#Publications">Publications</a> for more related papers)
+<p align="justify">
+	该项目使用单目摄像头实现了自主移动的机器人完整的集成系统。映射和路径规划两者	本文提出的主要任务。直观法采用测距法进行定位，
+	并对各专业进行三维定位计算环境中的障碍物。我们描述了
+	用已占用的网格地图绘制地形，将三维点投影到地形上机器人运动平面，因此每个网格的可达性为确定。根据地形信息，优化了A*算法用于路径规划。最后,根据
+	定位和规划，我们控制机器人跟踪路径。我们还开发了一个路径跟踪机器人原型。仿真和实验结果验证了该方法的有效性和可靠性提出的方法。
+
+</p>
 <br />
 <br />
 
